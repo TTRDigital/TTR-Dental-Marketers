@@ -1,0 +1,61 @@
+import type { Metadata, Viewport } from "next";
+import { Lexend, Montserrat } from "next/font/google";
+import { brandName, siteUrl } from "@/lib/site";
+import "./globals.css";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-montserrat",
+  weight: ["500", "600", "700", "800"],
+});
+
+const lexend = Lexend({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-lexend",
+  weight: ["400", "500", "600", "700"],
+});
+
+const description =
+  "TTR Dental Marketers helps dental practices reach page 1 of Google in 6 months, guaranteed or it's free. Local dental SEO, a free conversion-optimized website and 30+ new patients a month without paying for ads.";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: `${brandName} | Dental SEO & Marketing Agency`,
+    template: `%s | ${brandName}`,
+  },
+  description,
+  applicationName: brandName,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: brandName,
+    title: `${brandName} | Page 1 of Google in 6 Months, Guaranteed`,
+    description,
+    url: "/",
+    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: brandName }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${brandName} | Dental SEO & Marketing Agency`,
+    description,
+    images: ["/og.jpg"],
+  },
+  formatDetection: { telephone: false },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#87348d",
+};
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <html lang="en-US" className={`${montserrat.variable} ${lexend.variable}`}>
+      <body>{children}</body>
+    </html>
+  );
+}
