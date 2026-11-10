@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { JsonLd } from "@/components/JsonLd";
-import { CtaBand, Process, Results, StopAds, ThreeSteps, WhyTtr } from "@/components/Sections";
+import { CtaBlock, Offer, Process, Results, Stats, Story, TrustRow } from "@/components/Sections";
 
 export default function HomePage() {
   return (
@@ -13,12 +13,13 @@ export default function HomePage() {
       <Header />
       <main>
         <Hero />
-        <StopAds />
-        <WhyTtr />
+        <TrustRow />
+        <Offer />
+        <Stats />
         <Results />
-        <ThreeSteps />
+        <Story />
         <Process />
-        <CtaBand />
+        <CtaBlock />
         <Faq />
       </main>
       <Footer />

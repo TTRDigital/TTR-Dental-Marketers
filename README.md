@@ -1,7 +1,8 @@
 # TTR Dental Marketers website
 
-Interim one-page site for [ttrdentalmarketers.com](https://www.ttrdentalmarketers.com), rebuilt from the
-previous GoHighLevel funnel so the domain has a live, fast site while the full site is designed.
+Interim one-page site for [ttrdentalmarketers.com](https://www.ttrdentalmarketers.com). The content and assets come from
+the previous GoHighLevel funnel; the layout follows a calm, editorial pattern (white page, one typeface, flat rounded
+cards, purple as the accent only, one dark block for the main call to action).
 
 Next.js 16 (App Router), Tailwind v4, no CMS. Same stack as `TTR-Website`, so pages and components can move over later.
 
@@ -39,7 +40,9 @@ Set `NEXT_PUBLIC_SITE_URL` only if the site is served from a domain other than `
 - The hero plays the original funnel's background video (compressed to about 2 MB, `public/hero`) with the purple wash.
 - "Why TTR" shows the Dr. Medi Adili (Ideal Dental Solutions) testimonial. The YouTube player loads only when the
   thumbnail is clicked, through `youtube-nocookie.com`.
-- Fonts are Montserrat (headings) and Lexend (body), self-hosted by `next/font`.
+- Lexend is the only typeface, self-hosted by `next/font`. Headings are weight 500.
+- Page order: hero, trust badges, what you get (3 cards), stats, case studies, why TTR with the video, how it works,
+  booking block, FAQ, footer.
 - `app/sitemap.ts`, `app/robots.ts`, `app/icon.png` and `public/og.jpg` are generated from the brand assets.
 
 ## Assets
