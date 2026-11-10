@@ -14,7 +14,7 @@ export function JsonLd() {
         image: `${siteUrl}/og.jpg`,
         telephone: "+1-786-953-1712",
         description:
-          "Dental marketing agency helping dental practices reach page 1 of Google in 6 months with local SEO and conversion-optimized websites.",
+          "Dental marketing agency getting dental practices to page 1 of Google immediately with local SEO and conversion-optimized websites.",
         address: {
           "@type": "PostalAddress",
           streetAddress: address.street,

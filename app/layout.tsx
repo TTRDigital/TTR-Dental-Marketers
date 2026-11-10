@@ -11,7 +11,7 @@ const lexend = Lexend({
 });
 
 const description =
-  "TTR Dental Marketers gets dental practices to page 1 of Google in 6 months, guaranteed or it's free. Local dental SEO and a free conversion-optimized website that bring in 30+ new patients a month without paying for ads.";
+  "TTR Dental Marketers gets dental practices to page 1 of Google immediately, guaranteed or it's free. Local dental SEO and a free conversion-optimized website that bring in 30+ new patients a month without paying for ads.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: brandName,
-    title: `${brandName} | Page 1 of Google in 6 Months, Guaranteed`,
+    title: `${brandName} | Page 1 of Google, Immediately. Guaranteed.`,
     description,
     url: "/",
     images: [{ url: "/og.jpg", width: 1200, height: 630, alt: brandName }],

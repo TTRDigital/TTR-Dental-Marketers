@@ -2,7 +2,7 @@
 
 export const hero = {
   eyebrow: "Dental marketing agency",
-  headline: "Get your practice to page\u00a01 of Google in 6\u00a0months.",
+  headline: "Get your practice to page\u00a01 of Google. Immediately.",
   sub: "Guaranteed, or it’s free. Local SEO and a conversion-optimized website that bring in 30+ new patients a month, without paying for ads.",
   note: "Month-to-month. No hidden fees. Website included.",
   cta: "Book a free strategy call",
