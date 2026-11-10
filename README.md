@@ -25,7 +25,7 @@ Set `NEXT_PUBLIC_SITE_URL` only if the site is served from a domain other than `
 
 | What | File |
 | --- | --- |
-| Phone, address, hours, Calendly link, testimonial video, social links | `lib/site.ts` |
+| Phone, address, hours, booking calendar, testimonial video, social links | `lib/site.ts` |
 | All page copy: hero, checklist, story, case studies, steps, FAQ | `lib/content.ts` |
 | Section layout and styling | `components/Sections.tsx`, `components/Hero.tsx`, `components/Faq.tsx`, `components/Footer.tsx` |
 | Colors, fonts, buttons | `app/globals.css` |
@@ -34,9 +34,9 @@ Set `NEXT_PUBLIC_SITE_URL` only if the site is served from a domain other than `
 
 ## How the page works
 
-- Every "Book Free Strategy Call" / "Check Availability" button opens the Calendly event
-  `calendly.com/ttrdigital/dental-strategy-call` in a modal (`components/BookingModal.tsx`). Without JavaScript the
-  button links straight to Calendly.
+- Every "Book a free strategy call" button opens the GoHighLevel booking calendar
+  (`api.leadconnectorhq.com/widget/booking/abk1xtAopfTvDrKqU9Az`) in a modal (`components/BookingModal.tsx`).
+  Without JavaScript the button links straight to the calendar. Change the calendar in `lib/site.ts`.
 - The hero plays the original funnel's background video (compressed to about 2 MB, `public/hero`) with the purple wash.
 - "Why TTR" shows the Dr. Medi Adili (Ideal Dental Solutions) testimonial. The YouTube player loads only when the
   thumbnail is clicked, through `youtube-nocookie.com`.

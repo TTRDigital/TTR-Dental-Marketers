@@ -25,9 +25,10 @@ export const address = {
 
 export const hours = { days: "Monday - Friday", time: "9AM to 5PM EST" };
 
-/** Calendly event used by every "Book Free Strategy Call" button. */
-export const bookingUrl = "https://calendly.com/ttrdigital/dental-strategy-call";
-export const bookingEmbedUrl = `${bookingUrl}?hide_gdpr_banner=1&primary_color=87348d`;
+/** GoHighLevel booking calendar used by every "Book a free strategy call" button. */
+export const bookingUrl = "https://api.leadconnectorhq.com/widget/booking/abk1xtAopfTvDrKqU9Az";
+export const bookingEmbedUrl = bookingUrl;
+export const bookingEmbedScript = "https://link.msgsndr.com/js/form_embed.js";
 
 /** Dr. Medi Adili (Ideal Dental Solutions) testimonial on the TTR YouTube channel. */
 export const testimonialVideo = {

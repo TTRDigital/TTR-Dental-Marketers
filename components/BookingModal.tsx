@@ -1,15 +1,16 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from "react";
-import { bookingEmbedUrl, bookingUrl, phoneDisplay, phoneHref } from "@/lib/site";
+import Script from "next/script";
+import { bookingEmbedScript, bookingEmbedUrl, bookingUrl, phoneDisplay, phoneHref } from "@/lib/site";
 import { CloseIcon } from "./icons";
 
 type Ctx = { open: () => void };
 const BookingContext = createContext<Ctx>({ open: () => {} });
 
 /**
- * Wraps the page so any BookButton can open the Calendly booking modal,
- * the same booking flow the live funnel used.
+ * Wraps the page so any BookButton can open the GoHighLevel booking
+ * calendar in a modal.
  */
 export function BookingProvider({ children }: { children: ReactNode }) {
   const [isOpen, setOpen] = useState(false);
@@ -59,12 +60,17 @@ export function BookingProvider({ children }: { children: ReactNode }) {
                 <CloseIcon className="size-5" />
               </button>
             </div>
-            <iframe
-              src={bookingEmbedUrl}
-              title="Calendly: book a dental strategy call"
-              className="h-full w-full flex-1"
-              loading="eager"
-            />
+            <div className="flex-1 overflow-y-auto">
+              <iframe
+                src={bookingEmbedUrl}
+                title="Book a dental strategy call"
+                className="block min-h-full w-full border-0"
+                allow="payment"
+                id="abk1xtAopfTvDrKqU9Az_booking"
+                loading="eager"
+              />
+            </div>
+            <Script src={bookingEmbedScript} strategy="afterInteractive" />
             <p className="border-t border-line px-5 py-2 text-center text-xs text-meta">
               Calendar not loading?{" "}
               <a className="font-semibold text-brand underline-offset-2 hover:underline" href={bookingUrl} target="_blank" rel="noopener">
@@ -85,7 +91,7 @@ type BtnProps = {
   variant?: "primary" | "secondary" | "white" | "outline-white";
 };
 
-/** A pill button that opens the booking modal. Falls back to the Calendly link without JS. */
+/** A pill button that opens the booking modal. Falls back to the booking calendar link without JS. */
 export function BookButton({ children, className = "", variant = "primary" }: BtnProps) {
   const { open } = useContext(BookingContext);
   return (
