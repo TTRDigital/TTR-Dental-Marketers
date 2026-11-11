@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Lexend } from "next/font/google";
 import { brandName, siteUrl } from "@/lib/site";
-import "./globals.css";
 
 const lexend = Lexend({
   subsets: ["latin"],

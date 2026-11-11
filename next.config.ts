@@ -8,7 +8,7 @@ const csp = [
   "default-src 'self'",
   `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://link.msgsndr.com`,
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob:",
+  "img-src 'self' data: blob: https://cdn.sanity.io",
   "media-src 'self'",
   "font-src 'self' data:",
   "connect-src 'self'",
@@ -32,9 +32,16 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: {
     formats: ["image/avif", "image/webp"],
+    // Pictures edited in Sanity.
+    remotePatterns: [{ protocol: "https", hostname: "cdn.sanity.io" }],
   },
   async headers() {
-    return [{ source: "/:path*", headers: securityHeaders }];
+    return [
+      // The Sanity Studio (/cms) talks to many Sanity hosts and is protected by Sanity's own sign-in, so it gets the other headers but not this CSP.
+      { source: "/((?!cms).*)", headers: securityHeaders },
+      { source: "/cms/:path*", headers: securityHeaders.filter((h) => h.key !== "Content-Security-Policy") },
+      { source: "/cms", headers: securityHeaders.filter((h) => h.key !== "Content-Security-Policy") },
+    ];
   },
 };
 

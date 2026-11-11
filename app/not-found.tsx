@@ -1,4 +1,5 @@
 import Link from "next/link";
+import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BookingProvider } from "@/components/BookingModal";
