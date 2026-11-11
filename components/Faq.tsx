@@ -1,8 +1,9 @@
-import { faqs } from "@/lib/content";
+import { getContent } from "@/lib/content";
 import { Reveal } from "./Reveal";
 import { PlusIcon } from "./icons";
 
-export function Faq() {
+export async function Faq() {
+  const { faqs } = await getContent();
   return (
     <section id="faq" className="container-x py-16 sm:py-24">
       <div className="mx-auto max-w-3xl">

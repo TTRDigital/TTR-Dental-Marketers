@@ -1,10 +1,11 @@
-import { hero } from "@/lib/content";
+import { getContent } from "@/lib/content";
 import { phoneDisplay, phoneHref } from "@/lib/site";
 import { BookButton } from "./BookingModal";
 import { CheckIcon } from "./icons";
 
 /** Full-bleed hero: the video fills the viewport below the header, text stays on the page grid. */
-export function Hero() {
+export async function Hero() {
+  const { hero } = await getContent();
   return (
     <section className="relative isolate flex min-h-[calc(100svh-var(--header-h))] items-end overflow-hidden bg-deep text-white lg:items-center">
       <video

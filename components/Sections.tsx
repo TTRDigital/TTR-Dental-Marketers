@@ -1,12 +1,13 @@
 import Image from "next/image";
-import { cta, offer, process, results, stats, story, trust } from "@/lib/content";
+import { getContent } from "@/lib/content";
 import { phoneDisplay, phoneHref, testimonialVideo } from "@/lib/site";
 import { BookButton } from "./BookingModal";
 import { LiteYouTube } from "./LiteYouTube";
 import { Reveal } from "./Reveal";
 
 /* --------------------------------------------------------------- Trust row */
-export function TrustRow() {
+export async function TrustRow() {
+  const { trust } = await getContent();
   return (
     <section className="container-x py-14 sm:py-16" aria-label="Certifications and partnerships">
       <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:gap-14">
@@ -24,7 +25,8 @@ export function TrustRow() {
 }
 
 /* ------------------------------------------------------------------- Stats */
-export function Stats() {
+export async function Stats() {
+  const { stats } = await getContent();
   return (
     <section className="container-x py-12 sm:py-16">
       <Reveal as="dl" className="grid gap-10 border-t border-line pt-12 sm:grid-cols-3 sm:gap-6">
@@ -82,7 +84,8 @@ function OfferVisual({ kind }: { kind: "laptop" | "phone" | "leads" }) {
   );
 }
 
-export function Offer() {
+export async function Offer() {
+  const { offer } = await getContent();
   return (
     <section id="what-you-get" className="container-x py-16 sm:py-24">
       <Reveal className="mx-auto max-w-2xl text-center">
@@ -105,7 +108,8 @@ export function Offer() {
 }
 
 /* ----------------------------------------------------------------- Results */
-export function Results() {
+export async function Results() {
+  const { results } = await getContent();
   return (
     <section id="results" className="container-x py-16 sm:py-24">
       <Reveal>
@@ -133,7 +137,8 @@ export function Results() {
 }
 
 /* ------------------------------------------------------------------- Story */
-export function Story() {
+export async function Story() {
+  const { story } = await getContent();
   return (
     <section id="why-ttr" className="container-x py-16 sm:py-24">
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
@@ -159,7 +164,8 @@ export function Story() {
 }
 
 /* ----------------------------------------------------------------- Process */
-export function Process() {
+export async function Process() {
+  const { process } = await getContent();
   return (
     <section id="how-it-works" className="container-x py-16 sm:py-24">
       <Reveal>
@@ -179,7 +185,8 @@ export function Process() {
 }
 
 /* ---------------------------------------------------------------- CTA block */
-export function CtaBlock() {
+export async function CtaBlock() {
+  const { cta } = await getContent();
   return (
     <section id="book" className="container-x py-8 sm:py-12">
       <div className="grid overflow-hidden rounded-card bg-deep text-white lg:grid-cols-2">
